@@ -27,9 +27,17 @@ set -euo pipefail
 
 mkdir -p logs
 
-# Adjust to however Nextflow is provisioned on your account, e.g.:
-#   module load nextflow
-# or activate the same venv ngstk documents in README_Python_Installation.md.
+# Everything this pipeline shells out to -- nextflow, vcfanno, bgzip/tabix,
+# and the venv for bin/run_report_variants.py -- needs to be on $PATH here,
+# before `nextflow run`, because SLURM propagates this job's environment to
+# the per-task jobs Nextflow submits underneath it. Adjust these to however
+# you provisioned each one on your account (see docs/usage.md, "Setting up
+# Narval" for one concrete way to do it):
+
+# module load StdEnv/2023 java/17 nextflow  # if provided as modules; else self-install
+# module load StdEnv/2023 htslib            # bgzip / tabix
+# export PATH="/path/to/vcfanno_dir:$PATH"  # static vcfanno binary (no module on Narval)
+# source /path/to/venv/bin/activate         # pandas/numpy/cyvcf2/pyfiglet/sample-sheet/xlsxwriter
 
 nextflow run main.nf \
     -profile narval_slurm \

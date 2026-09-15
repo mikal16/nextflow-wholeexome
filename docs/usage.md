@@ -15,6 +15,68 @@ This is a two-stage workflow:
 on Nextflow >22.10.6) and nf-core's own repo description now points users to
 sarek instead.
 
+## Setting up Narval
+
+Everything below runs on a **login node** (has internet); compute nodes
+generally don't, so anything that needs to be downloaded has to happen here
+first. Check what's already provisioned before installing anything:
+
+```bash
+module spider nextflow      # a cluster-provided Nextflow module, if any
+module spider java
+module spider htslib        # gives you bgzip / tabix
+module spider apptainer     # only needed if you go the container route
+which nextflow vcfanno bgzip tabix 2>&1
+```
+
+If `nextflow` isn't a module:
+
+```bash
+module load StdEnv/2023 java/17
+curl -s https://get.nextflow.io > ~/bin/nextflow   # or wherever's on your $PATH
+chmod +x ~/bin/nextflow
+nextflow -version
+```
+
+`vcfanno` has no Compute Canada module (nothing turned up for it here) --
+grab the static binary once on the login node:
+
+```bash
+curl -sSL https://github.com/brentp/vcfanno/releases/download/v0.3.9/vcfanno_linux64 \
+    -o ~/bin/vcfanno
+chmod +x ~/bin/vcfanno
+```
+
+`bgzip`/`tabix`: `module load StdEnv/2023 htslib` (adjust the `StdEnv`
+version to whatever `module spider htslib` shows) should cover it.
+
+The Python side (`bin/run_report_variants.py` and what it imports) needs a
+venv, not conda -- Compute Canada's own docs discourage conda on their
+clusters. Matches `modules/local/environment.yml`:
+
+```bash
+module load StdEnv/2023 python/3.11
+python -m venv ~/venvs/wholeexome
+source ~/venvs/wholeexome/bin/activate
+pip install --no-index pandas numpy cyvcf2 pyfiglet sample-sheet XlsxWriter
+# drop --no-index if those aren't in Compute Canada's prebuilt wheelhouse
+# for your python/pandas/etc versions; check with `avail_wheels pandas`
+deactivate
+```
+
+Put the `module load`s, the `~/bin` PATH addition, and the venv activation
+into `slurm/submit_wholeexome.sh` (there's a marked section for exactly
+this) before you submit -- SLURM carries that job's environment down into
+the per-task jobs Nextflow submits underneath it.
+
+One more thing worth doing before a real run: confirm your actual
+`$RESOURCES` path. ngstk's own `dnaseq_exome/README.md` uses
+`/lustre06/project/rrg-jbriv/resources` as its example -- if your account
+has access to the same project space and it's still laid out that way,
+that's what `--resources_dir` should point at; if not, ask whoever
+maintains ngstk's Narval deployment for the lab's current path, since I
+can't verify this from outside Narval.
+
 ## Stage 1: nf-core/sarek
 
 ```bash
