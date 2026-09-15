@@ -107,7 +107,7 @@ parameter details (this pipeline does not wrap or re-document sarek itself).
 
 ```bash
 nextflow run main.nf \
-    --input 'results/sarek/variant_calling/haplotypecaller/*/*.filtered.vcf.gz' \
+    --input 'results/sarek/annotation/*/*_snpEff.ann.vcf.gz' \
     --genome GRCh38 \
     --resources_dir /path/to/ngstk/resources \
     --reporting_file reporting_file.csv \
@@ -162,7 +162,7 @@ for ngstk, point `--resources_dir` at the same root.
 RESOURCES=/lustre06/project/rrg-jbriv/resources \
 SLURM_ACCOUNT=rrg-jbriv \
 ./slurm/submit_wholeexome.sh \
-    --input 'results/sarek/variant_calling/haplotypecaller/*/*.filtered.vcf.gz' \
+    --input 'results/sarek/annotation/*/*_snpEff.ann.vcf.gz' \
     --genome GRCh38 \
     --outdir results/wholeexome
 ```

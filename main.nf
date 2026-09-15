@@ -38,7 +38,7 @@ workflow {
 
     if (!params.input) {
         error "Please provide --input, a glob to sarek's germline VCF(s), " +
-              "e.g. --input 'results/sarek/variant_calling/haplotypecaller/*/*.filtered.vcf.gz'"
+              "e.g. --input 'results/sarek/annotation/*/*_snpEff.ann.vcf.gz'"
     }
     if (!(params.genome in ['GRCh37', 'GRCh38'])) {
         error "--genome must be 'GRCh37' or 'GRCh38' (got '${params.genome}')"

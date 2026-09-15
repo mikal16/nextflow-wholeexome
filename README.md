@@ -47,7 +47,7 @@ nextflow run nf-core/sarek -r 3.5.1 \
 
 # Stage 2: this pipeline
 nextflow run main.nf \
-    --input 'results/sarek/variant_calling/haplotypecaller/*/*.filtered.vcf.gz' \
+    --input 'results/sarek/annotation/*/*_snpEff.ann.vcf.gz' \
     --genome GRCh38 \
     --resources_dir /path/to/ngstk/resources \
     --outdir results/wholeexome \

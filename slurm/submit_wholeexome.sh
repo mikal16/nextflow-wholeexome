@@ -8,7 +8,7 @@
 #   RESOURCES=/lustre06/project/rrg-jbriv/resources \
 #   SLURM_ACCOUNT=rrg-jbriv \
 #   ./slurm/submit_wholeexome.sh \
-#       --input 'results/sarek/variant_calling/haplotypecaller/*/*.filtered.vcf.gz' \
+#       --input 'results/sarek/annotation/*/*_snpEff.ann.vcf.gz' \
 #       --genome GRCh38 \
 #       --outdir results/wholeexome
 #
