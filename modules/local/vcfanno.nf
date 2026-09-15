@@ -5,9 +5,15 @@
 // sarek's own annotation resources.
 //
 // Container tags are pinned to real, published biocontainers images
-// (verified against quay.io at the time this pipeline was written); nothing
-// here has been run end-to-end, so treat the pins as a starting point and
-// re-verify before production use.
+// (verified against quay.io) and this whole module has been run end-to-end
+// against a synthetic VCF + a full set of dummy files standing in for every
+// path in assets/vcfanno_grch3{7,8}.toml (see repo commit history for the
+// smoke test). One thing that testing caught: vcfanno does NOT expand
+// $RESOURCES itself -- setting the RESOURCES env var and leaving
+// "$RESOURCES/..." literal in the toml just makes vcfanno try to open a
+// path containing the literal string "$RESOURCES" and fail. The toml has
+// to be pre-resolved before vcfanno ever sees it, which is what the sed
+// substitution below does.
 
 process VCFANNO {
     tag "$meta.id"
@@ -25,14 +31,15 @@ process VCFANNO {
 
     script:
     """
-    RESOURCES=${resources_dir} vcfanno -p ${task.cpus} ${toml} ${vcf} > ${meta.id}.vcfanno.vcf
+    sed 's#\\\$RESOURCES#${resources_dir}#g' ${toml} > resolved.toml
+    vcfanno -p ${task.cpus} resolved.toml ${vcf} > ${meta.id}.vcfanno.vcf
     """
 }
 
 process BGZIP_TABIX {
     tag "$meta.id"
     label 'process_low'
-    publishDir "${params.outdir}/annotated_vcf/${meta.id}", mode: 'copy'
+    publishDir path: { "${params.outdir}/annotated_vcf/${meta.id}" }, mode: 'copy'
     container 'quay.io/biocontainers/htslib:1.24--ha79157c_0'
     conda 'bioconda::htslib=1.24'
 

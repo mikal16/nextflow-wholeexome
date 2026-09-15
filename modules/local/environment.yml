@@ -7,3 +7,11 @@ dependencies:
   - pandas=1.2.4
   - numpy=1.20.2
   - cyvcf2=0.11.3
+  # common_tools.py (imported by reportVariants.py) imports these three at
+  # module level even though the REPORT_VARIANTS step itself never calls
+  # them -- they're only used by other ngstk scripts (cnv/fusion/mtDNA/etc.)
+  # that share this file. Confirmed required by actually running
+  # run_report_variants.py; omitting them raises ModuleNotFoundError.
+  - pyfiglet=0.8.post1
+  - sample-sheet=0.8.0
+  - xlsxwriter=3.0.2

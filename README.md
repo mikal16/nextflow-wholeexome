@@ -59,10 +59,14 @@ usage: [`docs/usage.md`](docs/usage.md).
 
 ## Status
 
-Scaffolded but **not yet run end-to-end** -- there was no Nextflow/container
-runtime or ngstk resource tree available to test against while assembling
-this. See "What has not been run" in `docs/usage.md` before trusting it on
-real samples.
+Run end-to-end (real Nextflow, real vcfanno) against a synthetic VCF and a
+dummy stand-in for the full `$RESOURCES` tree -- annotations flow correctly
+from vcfanno through to the final TSV report. That testing also found and
+fixed four real bugs (a Nextflow-syntax incompatibility, a missing shebang,
+a `$RESOURCES`-expansion assumption that didn't hold, and a `publishDir`
+timing bug). Still untested against real (non-dummy) reference data, a real
+container runtime, GRCh37 annotation output, multi-sample/trio VCFs, and
+SLURM. Full account: "What has actually been tested" in `docs/usage.md`.
 
 ## Internal use note
 

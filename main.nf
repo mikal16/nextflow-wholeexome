@@ -21,16 +21,18 @@ nextflow.enable.dsl = 2
 include { VCFANNO; BGZIP_TABIX } from './modules/local/vcfanno'
 include { REPORT_VARIANTS }      from './modules/local/report_variants'
 
-def EXOME_CONFIGS = [
-    'GRCh38': [
-        'default'        : params.grch38_config,
-    ],
-    'GRCh37': [
-        'default'        : params.grch37_config,
-        'ucsc_all_exons' : params.grch37_config_ucsc_all_exons,
-        'ucsc_coding'    : params.grch37_config_ucsc_coding,
-    ],
-]
+def exomeConfigs() {
+    [
+        'GRCh38': [
+            'default'        : params.grch38_config,
+        ],
+        'GRCh37': [
+            'default'        : params.grch37_config,
+            'ucsc_all_exons' : params.grch37_config_ucsc_all_exons,
+            'ucsc_coding'    : params.grch37_config_ucsc_coding,
+        ],
+    ]
+}
 
 workflow {
 
@@ -47,10 +49,11 @@ workflow {
               "See docs/usage.md."
     }
 
-    def configPath = EXOME_CONFIGS[params.genome][params.exome_target_set]
+    def configs = exomeConfigs()
+    def configPath = configs[params.genome][params.exome_target_set]
     if (!configPath) {
         error "Unknown --exome_target_set '${params.exome_target_set}' for genome " +
-              "${params.genome}. Valid options: ${EXOME_CONFIGS[params.genome].keySet().join(', ')}"
+              "${params.genome}. Valid options: ${configs[params.genome].keySet().join(', ')}"
     }
     config_ini = file(configPath, checkIfExists: true)
 
@@ -75,10 +78,12 @@ workflow {
     VCFANNO(vcf_ch, toml, params.resources_dir)
     BGZIP_TABIX(VCFANNO.out.vcf)
     REPORT_VARIANTS(BGZIP_TABIX.out.vcf_tbi, config_ini, reporting_file, params.resources_dir)
-}
 
-workflow.onComplete {
-    log.info "Pipeline completed at: ${workflow.complete}"
-    log.info "Reports written under: ${params.outdir}"
-    log.info "Execution status: ${workflow.success ? 'OK' : 'FAILED'}"
+    // A custom workflow.onComplete{} handler was tried here and dropped: on
+    // Nextflow's newer strict-syntax parser (confirmed against 26.04.6) it
+    // can no longer live at the top level ("Statements cannot be mixed with
+    // script declarations"), and nesting it inside this workflow block
+    // instead makes `workflow` resolve to null within the closure
+    // (NullPointerException on workflow.complete), confirmed by actually
+    // running it. Nextflow's own default completion summary covers this.
 }
