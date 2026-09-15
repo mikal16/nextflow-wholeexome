@@ -1,0 +1,378 @@
+[[annotation]]
+file="$RESOURCES/grch38/clinvar/clinvar.vcf.gz"    
+fields = ["ID","CLNSIG","CLNDN","CLNREVSTAT"]
+ops=["self","self","self","self"]
+names=["CLNVID","CLNSIG","CLNDN","CLNREVSTAT"]
+
+[[annotation]]
+file="$RESOURCES/grch38/cosmic/cosmic_coding.vcf.gz"
+fields = ["ID","GENE","CDS","AA","CNT"]
+ops=["self","self","self","self","self"]
+names=["CMCID","CMCGENE","CMCCDS","CMCAA","CMCCNT"]
+
+[[annotation]]
+file="$RESOURCES/grch38/cosmic/cosmic_noncoding.vcf.gz"
+fields = ["ID","GENE","CDS","AA","CNT"]
+ops=["self","self","self","self","self"]
+names=["CMCID","CMCGENE","CMCCDS","CMCAA","CMCCNT"]
+
+[[annotation]]
+file="$RESOURCES/grch38/dbsnp/dbsnp.vcf.gz"
+fields = ["ID","COMMON"]
+ops=["self","self"]
+names=["DBSID","DBSCOMMON"]
+
+[[annotation]]
+file="$RESOURCES/grch38/ucsc/genomic_superdups.bed.gz" 
+columns=[3]
+ops=["flag"]
+names=["SEGDUP"]
+
+[[annotation]]
+file="$RESOURCES/grch38/ucsc/repeat_masker.bed.gz"
+columns=[3]
+ops=["flag"]
+names=["REP_MASK"]
+
+[[annotation]]
+file="$RESOURCES/grch38/ucsc/simple_repeats.bed.gz"
+columns=[3]
+ops=["flag"]
+names=["REP_SIMPLE"]
+
+[[annotation]]
+file="$RESOURCES/grch38/ucsc/refseq/refseq_select.bed.gz"
+columns=[4]
+ops=["self"]
+names=["REF_SELECT"]
+
+[[annotation]]
+file="$RESOURCES/grch38/cadd/cadd.snvs.tsv.gz"
+columns=[6]
+ops=["self"]
+names=["CADD_PHRED"]
+
+[[annotation]]
+file="$RESOURCES/grch38/cadd/cadd.indels.tsv.gz"
+columns=[6]
+ops=["self"]
+names=["CADD_PHRED"]
+
+[[annotation]]
+file="$RESOURCES/grch38/revel/revel.tsv.gz"
+columns=[7]
+ops=[ "mean"]
+names=["REVEL"]
+
+[[annotation]]
+file="$RESOURCES/grch38/dbscsnv/dbscsnv.tsv.gz"
+columns = [5, 6]
+ops = ["max","max"]
+names = ["DBSCSNV_ADA","DBSCSNV_RF"]
+
+[[annotation]]
+file="$RESOURCES/grch38/spliceai/spliceai.masked.snv.vcf.gz"
+fields = ["SpliceAI"]
+ops=["self"]
+names=["SPLICEAI"]
+
+[[annotation]]
+file="$RESOURCES/grch38/spliceai/spliceai.masked.indel.vcf.gz"
+fields = ["SpliceAI"]
+ops=["self"]
+names=["SPLICEAI"]
+
+[[annotation]]
+file="$RESOURCES/grch38/primateai/primateai.tsv.gz"
+columns=[11]
+ops=[ "self"]
+names=["PRIMATEAI"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr1.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr2.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr3.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr4.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr5.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr6.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr7.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr8.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr9.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr10.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr11.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr12.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr13.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr14.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr15.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr16.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr17.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr18.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr19.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr20.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr21.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chr22.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chrX.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.exomes.chrY.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr1.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr2.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr3.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr4.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr5.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr6.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr7.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr8.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr9.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr10.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr11.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr12.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr13.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr14.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr15.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr16.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr17.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr18.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr19.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr20.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr21.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chr22.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chrX.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch38/gnomad/gnomad.genomes.chrY.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+

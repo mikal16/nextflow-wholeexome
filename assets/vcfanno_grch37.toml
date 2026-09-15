@@ -1,0 +1,95 @@
+[[annotation]]
+file="$RESOURCES/grch37/clinvar/clinvar.vcf.gz"
+fields = ["ID","CLNSIG","CLNSIGCONF","CLNDN","CLNREVSTAT"]
+ops=["self","self","self","self","self"]
+names=["CLNVID","CLNSIG","CLNSIGCONF","CLNDN","CLNREVSTAT"]
+
+[[annotation]]
+file="$RESOURCES/grch37/cosmic/cosmic_coding.vcf.gz"
+fields = ["ID","GENE","CDS","AA","CNT"]
+ops=["self","self","self","self","self"]
+names=["CMCID","CMCGENE","CMCCDS","CMCAA","CMCCNT"]
+
+[[annotation]]
+file="$RESOURCES/grch37/cosmic/cosmic_noncoding.vcf.gz"
+fields = ["ID","GENE","CDS","AA","CNT"]
+ops=["self","self","self","self","self"]
+names=["CMCID","CMCGENE","CMCCDS","CMCAA","CMCCNT"]
+
+[[annotation]]
+file="$RESOURCES/grch37/dbsnp/dbsnp_b155.vcf.gz"
+fields = ["ID"]
+ops=["self"]
+names=["DBSID"]
+
+[[annotation]]
+file="$RESOURCES/grch37/gnomad/gnomad.exomes.sites.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDEXAC","GNDEXAN","GNDEXAF","GNDEXFILT","GNDEXHOM","GNDEXPOPMAX","GNDEXAN_POPMAX","GNDEXAC_POPMAX","GNDEXAF_POPMAX","GNDEXNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch37/gnomad/gnomad.genomes.sites.vcf.gz"
+fields = ["AC","AN","AF","FILTER","nhomalt","popmax","AN_popmax","AC_popmax","AF_popmax","nhomalt_popmax"]
+ops=["self","self","self","self","self","self","self","self","self","self"]
+names=["GNDWGAC","GNDWGAN","GNDWGAF","GNDWGFILT","GNDWGHOM","GNDWGPOPMAX","GNDWGAN_POPMAX","GNDWGAC_POPMAX","GNDWGAF_POPMAX","GNDWGNHOM_POPMAX"]
+
+[[annotation]]
+file="$RESOURCES/grch37/ucsc/genomic_superdups.bed.gz"
+columns=[3]
+ops=["flag"]
+names=["SEGDUP"]
+
+[[annotation]]
+file="$RESOURCES/grch37/ucsc/repeat_masker.bed.gz"
+columns=[3]
+ops=["flag"]
+names=["REP_MASK"]
+
+[[annotation]]
+file="$RESOURCES/grch37/ucsc/simple_repeats.bed.gz"
+columns=[3]
+ops=["flag"]
+names=["REP_SIMPLE"]
+
+[[annotation]]
+file="$RESOURCES/grch37/ucsc/refseq/refseq_select.bed.gz"
+columns=[4]
+ops=["self"]
+names=["REF_SELECT"]
+
+[[annotation]]
+file="$RESOURCES/grch37/cadd/cadd.snvs.tsv.gz"
+columns=[6]
+ops=["self"]
+names=["CADD_PHRED"]
+
+[[annotation]]
+file="$RESOURCES/grch37/cadd/cadd.indels.tsv.gz"
+columns=[6]
+ops=["self"]
+names=["CADD_PHRED"]
+
+[[annotation]]
+file="$RESOURCES/grch37/spliceai/spliceai.masked.snv.vcf.gz"
+fields = ["SpliceAI"]
+ops=["self"]
+names=["SPLICEAI"]
+
+[[annotation]]
+file="$RESOURCES/grch37/spliceai/spliceai.masked.indel.vcf.gz"
+fields = ["SpliceAI"]
+ops=["self"]
+names=["SPLICEAI"]
+
+[[annotation]]
+file="$RESOURCES/grch37/primateai/primateai.tsv.gz"
+columns=[11]
+ops=[ "self"]
+names=["PRIMATEAI"]
+
+[[annotation]]
+file="$RESOURCES/grch37/revel/revel.tsv.gz"
+columns=[8]
+ops=[ "self"]
+names=["REVEL"]
